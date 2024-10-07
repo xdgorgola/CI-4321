@@ -4,6 +4,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 2000);
 scene.background = new THREE.Color(0.05, 0.05, 0.09);
 
+const aspect = window.innerWidth / window.innerHeight;
 // Setting up the renderer and adding it to the DOM
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);

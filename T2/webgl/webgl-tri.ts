@@ -4,8 +4,11 @@ function main() {
   // Obtaining canvas from html and creating webgl2 context
   const canvas = document.querySelector("#glcanvas") as HTMLCanvasElement | null;
   if (canvas === null) throw new Error("No canvas element.")
+  
   const gl = canvas.getContext("webgl2");
-
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  
   if (gl === null) {
     alert(
       "Unable to initialize WebGL. Your browser or machine may not support it.",
