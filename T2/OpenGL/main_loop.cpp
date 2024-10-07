@@ -14,6 +14,7 @@ void processInput(GLFWwindow* window);
 
 int main()
 {
+	// Window initializantion
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -29,7 +30,7 @@ int main()
 	glfwMakeContextCurrent(window);
 	glfwSetFramebufferSizeCallback(window, windowResizeCallback);
 
-
+	// Glad initialization for buffer~memory handling.
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
 		glfwTerminate();
@@ -99,6 +100,7 @@ int main()
 		 0.5f, -0.5f,  0.0f,  0.0f, 0.0f, 1.0f
 	};
 
+	// Buffers creation and binding
 	unsigned int VBO;
 	unsigned int VAO;
 	glGenBuffers(1, &VBO);
